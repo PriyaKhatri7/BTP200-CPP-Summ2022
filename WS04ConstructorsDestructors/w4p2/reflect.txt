@@ -1,0 +1,25 @@
+During p1 I noticed that I was getting the output 0 or 1 for if saiyan is super or not but the expected
+output is yes or no. Originally I thought I would want to create another public member function and output 
+"Yes" or "No" but later after some research and looking in the mainI found that I can use a conditional statement. 
+I wanted to try this method because I never worked with it this way but have always wanted to learn how to display it.
+
+Also found that when I use my default constructor in my set function it was giving garbage values and didn't clear until
+I manually made them equal to empty state. I found that the compiler uses default constructors but sets the values to
+null and 0s and so forth but in some cases it can go crazy.
+
+In Part 2, after updating all the functions to how I thought it should work, I was getting errors from the compilor
+saying it has unresolved external symbols from a few different functions. I ended up finding out that my Saiyan.cpp file
+was under the Header Files for some reason instead of the Source Files. That ended up clearly the 8 errors I had been
+looking into for a couple days.
+
+Another thing I learned while doing this workshop was I was not getting clear values for some of the outputs and I looked
+back at workshop 3 noticing that I deallocated memory before I allocated which I tried again here and it worked. I noticed
+that this is can handy when you're dealing with alot of data in C++ because it will make sure to clear any garbage data 
+before allocating new ones which then helps when allocating dynamic memory as I did in my set function().
+
+The fight function prototype doesn't need const because before in part 1 when there was a const it meant that an object
+cannot be modified. Since we are handling 2 current instances that will change based on the data member of the const
+objects we would get a compilor error if it was still there. From my understanding we are only supposed to use const keyword
+when we the objects are constant. For example display will more often than not be a const because the constant objects are 
+initialised at the time of declaration using constructor.
+
