@@ -1,0 +1,20 @@
+In this workshop I had had trouble in my custom constructor because m_fruits is
+from type Fruits* but when I am copying over the data then it woudn't accept the
+way that I normally copy over dynamically allocated arrays since this time it's
+not copying from a const char*. This has taken a few hours to figure out why and
+how to resolve this. I found what I was doing wrong with this.
+
+1. I shouldn't be using strcpy as I did in the previous workshops when copying over
+the values but instead I just need to allocate the memory because i'm not working
+with type char*.
+
+Another thing I learned in this workshop was how to do a direct call. I'm not sure
+why I didn't see it in the notes earlier but my first mistake was that I kept calling 
+my copy constructor from my copy assignment operator when I should be doing this the
+opposite way because the copy assignment does slightly more work in which the main can
+differentiate between what it would need to check for and in my copy constructor I can
+then just do this line `*this = src;`.
+Which only after debugging and going back to the notes wondering why it kept giving an
+exception when I was deallocating in the assignment operator and why I was getting leaks
+was because I didn't set it to a nullptr state before calling it so whatever garbage/values
+it was getting was carrying over and causing a leak. I later realized it and fixed it as such.  

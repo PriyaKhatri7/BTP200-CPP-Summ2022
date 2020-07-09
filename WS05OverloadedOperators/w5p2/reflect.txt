@@ -1,0 +1,17 @@
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshopsand assignments.
+
+
+- Explain why the word explicit is important and what happens if we remove it for the operator bool()
+From my understanding the keyword explicit is specifically used for conversion functions 
+operators and constructors. This makes the code less prone to errors. This keyword declares 
+explicit conversion to a type. 
+The program needed to remove the keyword for this function because it's used for automatic 
+conversions and explicit says that conversion cannot be used in "automatic" conversion.
+The means that potentially other data types can be changed as well as it's required because it
+stops that.
+
+- Explain why this friend helper operator cannot be a member of the class.
+The operator< isn't a part of the Ship class because if it's a meber of the class it will give 
+you an error since you cannoy have more than 2 arguments/parameters whilst being a member of a 
+class.
+
