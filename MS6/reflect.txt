@@ -1,0 +1,36 @@
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my workshops and assignments.
+
+Priya Khatri | 110149176 | pkhatri4@myseneca.ca
+
+- I practised and learned to try to reuse my code alot in term of instead of doing an else and set 
+empty for example, I would do : Menu() and call the constructor which helps to make the code look 
+cleaner as well.
+
+- I was also having alot of issues with my custom constructor for MenuItems but I later found in 
+debugging that I have to make m_item = nullptr before allocating new memory. While in matrix when
+I was checking for memory leaks, I was getting close to 500 leaks and I wasn't exactly sure where
+they were coming from. I fixed a couple functions but the 2 things I noticed that cleared everything
+was:
+1. in my for loop when I'm setting menuItem to nullptr I should do it like menuItem[i] = nullptr 
+which worked as to previously I was doing delete menuItem[i] where it wasn't setting it anything which
+is why it was wrong and giving leaks.
+2. in my destructor for menu I wasn't deleting menuItem which was giving leaks from when it collects 
+this information from the main
+
+I was facing alot of difficulties with my custom constructor because that is where the program starts.
+At first I was getting the output similar to this:
+loading data from ParkingData.csv
+Error in data file
+loading data file
+
+I found that there was an error from my constructor and running through the debugger I found that it wasn't
+also checking for a null string which is why I wasn't getting error twice at the top. 
+
+Also through the program when I would get to 4 it wouldn't output the line with multiple "@" coming
+from the main but it wasn't unless I entered 4 in my program again. So I figured out it was one of my
+loops in the exit function that I had to fix. Included a picture for reference.
+
+ 
+Lastly having alot of leaks that I have to go through and figure out where I need to deallocate memory
+using the debugger
